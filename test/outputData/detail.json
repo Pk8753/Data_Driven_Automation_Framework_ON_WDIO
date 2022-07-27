@@ -1,0 +1,24 @@
+{
+  "Flipkart": [
+    {
+      "Book_Name": "The God of Small Things",
+      "ISBN": "9780006551096, 9780006551096",
+      "Author": "Roy Arundhati",
+      "Publisher": " HarperCollins Publishers",
+      "Price": "Rs1456",
+      "Is_available": true
+    }
+  ]
+},
+{
+  "Amazon": [
+    {
+      "Book_Name": "The God of Small Things",
+      "ISBN": "978-9794614020",
+      "Author": "Arundhati Roy",
+      "Publisher": "Penguin India",
+      "price": "Rs1,228",
+      "Is_available": true
+    }
+  ]
+},

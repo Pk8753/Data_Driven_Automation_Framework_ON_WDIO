@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//span[text()=\"The God of Small Things\"]/parent::a/parent::h2//following-sibling::div//div//a"
+}

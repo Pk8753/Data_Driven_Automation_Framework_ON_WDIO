@@ -1,0 +1,4 @@
+{
+  "using": "xpath",
+  "value": "//a[@title=\"The God of Small Things\"]"
+}
