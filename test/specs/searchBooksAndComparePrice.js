@@ -4,6 +4,11 @@ const buybooksindiaHomePage = require('../pageobjects/buybooksindiaHome.page');
 const fs = require('fs');
 let detail=[];
 
+
+
+
+
+
 describe('User journey to search book on various online platform and fetch price :', () => {
 
     beforeEach('Reloading browser session to avoid stale element',function () {
@@ -18,6 +23,33 @@ describe('User journey to search book on various online platform and fetch price
        });  
     });
 
+    function calculateBetterWebsiteToBuy(){
+        if (amazonHomePage.amazonNetPrice < buybooksindiaHomePage.buyBookPrice){
+            if(amazonHomePage.amazonNetPrice<flipkartHomePage.netBookPrice){
+                fs.appendFile('test/outputData/detail.json',"Amazon IS BETTER",err =>{
+                    if (err){
+                        console.log('Error Occured While Writing', err);
+                    }
+                });
+            }else{
+                fs.appendFile('test/outputData/detail.json',"FLIPKART IS BETTER",err =>{
+                    if (err){
+                        console.log('Error Occured While Writing', err);
+                    }
+                });
+            }
+        }
+        else
+        {
+            fs.appendFile('test/outputData/detail.json',"BOOKINDIA IS BETTER",err =>{
+                if (err){
+                    console.log('Error Occured While Writing', err);
+                }
+            });
+            }
+    
+        }
+   
     var listOfBookArray=[];
     var csvData = require('fs').readFileSync("test/testData/bookAndQuantity.csv", "utf8")
     csvData = csvData.split("\n")
@@ -47,7 +79,10 @@ describe('User journey to search book on various online platform and fetch price
                 amazonHomePage.fetchBookPrice(quantity);
             });
 
+            it(`Find best website to buy`,  () => {
+                calculateBetterWebsiteToBuy();
 
+            });
         
     });
 

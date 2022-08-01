@@ -1,9 +1,9 @@
 module.exports = class Page {
    
-    openAmazon(path) {
+    openAmazon() {
         return browser.url(`https://www.amazon.in/`)
     }
-    openFlipkart(path) {
+    openFlipkart() {
         return browser.url(`https://www.flipkart.com/`)
     }
     openBuybooksindia() {

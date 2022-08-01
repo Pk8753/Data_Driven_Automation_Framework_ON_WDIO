@@ -1,4 +1,5 @@
 const Page = require('./page');
+const fs = require('fs');
 
 let header;
 let handler=[];
@@ -7,7 +8,7 @@ let amazonNetPrice=0;
 let foundFlag;
 let publisherName;
 let bookISBN=0;
-const fs = require('fs');
+
 
 class amazonHome extends Page {
 
@@ -75,7 +76,6 @@ class amazonHome extends Page {
         return $('//span[contains(text(),"ISBN-13")]//following-sibling::span');
     }
 
-   
 
     openAmazon() {
         return super.openAmazon('login');
@@ -111,7 +111,11 @@ class amazonHome extends Page {
         this.paperbackButton.click();
         if(this.quantityDropdown.isDisplayed() && this.foundFlag)  //if dropdown is not present in amazon
             {
-                this.quantityDropdown.selectByVisibleText(quantity);
+                try {
+                    this.quantityDropdown.selectByVisibleText(quantity);
+                } catch (err) {
+                    return false
+                }
                 this.publisherName = this.publisherNameLable.getText();
                 this.bookISBN = this.isbnNumberLable.getText();
                 this.addToCartButton.click();
@@ -133,7 +137,7 @@ class amazonHome extends Page {
                 console.log('Error Occured While Writing', err);
             }
             else{
-                console.log('Successfull');
+                console.log('Successful');
             }
         });
         console.log(AmzonJson);

@@ -155,7 +155,7 @@ class buybooksindiaHome extends Page {
                 console.log('Error Occured While Writing', err);
             }
             else{
-                console.log('Successfull');
+                console.log('Successful');
             }
         });
         console.log(BookIndiajson)
