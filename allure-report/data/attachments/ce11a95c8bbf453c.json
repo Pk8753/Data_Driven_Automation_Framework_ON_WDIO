@@ -1,4 +1,0 @@
-{
-  "script": "return (() => window.name).apply(null, arguments)",
-  "args": []
-}
