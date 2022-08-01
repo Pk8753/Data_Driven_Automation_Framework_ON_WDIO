@@ -1,4 +1,0 @@
-{
-  "using": "xpath",
-  "value": "//div[text()=\"Total Amount\"]/parent::div//following-sibling::span//div//div//div//following-sibling::span"
-}
